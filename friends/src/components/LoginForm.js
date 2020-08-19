@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import { axiosWithAuth } from '../utils/axiosWithAuth'
+import { useHistory } from 'react-router-dom'
 
 
 const initialValues = {
@@ -7,20 +8,25 @@ const initialValues = {
     password: 'i<3Lambd4'
 }
 
-
+ 
 export const LoginForm = () => {
     const [values, setValues ] = useState (initialValues)
-   
 
     const handleChange = (e) => {
         setValues({...values, [e.target.name]: e.target.value})
     }
 
+    const history = useHistory()
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        // axios.post('http://localhost:5000/api/login', initialValues)
-        // .then((res) => console.log(res))
-        // .catch((err) => console.log(err))
+        axiosWithAuth()
+        .post('/login', values)
+        .then((res) => {
+           localStorage.setItem('token', res.data.payload) 
+           history.push('./friends')
+        })
+        .catch((err) => console.log(err))
     }
 
     return (
@@ -40,7 +46,7 @@ export const LoginForm = () => {
                 name='password'
                 value={values.password}
                 />
-                <button>Login</button>
+                <button type='submit'>Login</button>
             </form>
         </div>
     )

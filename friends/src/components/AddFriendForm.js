@@ -17,9 +17,8 @@ export const AddFriendForm = () => {
     // console.log(newFriend)
 
     const onSubmit = (e) => {
-        e.preventDefault()
         axiosWithAuth()
-        .post('/friends', newFriend)
+        .post('/friends', values)
         .then(res => {
             console.log('it worked', res)
             setValues({

@@ -1,18 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { AddFriendForm } from './AddFriendForm'
+
 
 export const FriendsList = () => {
+    const [friends, setFriends] = useState([])
+
+    useEffect(()=>{
+  
+    })
+
     return (
         <div>
             <div>
-                See API of friends list here
+                Friends List HERE
             </div>
             <div>
-                <form>
-                    <input 
-                    type="text"
-                    placeholder='add new friend..'
-                    />
-                </form>
+            <AddFriendForm/>
             </div>
         </div>
     )

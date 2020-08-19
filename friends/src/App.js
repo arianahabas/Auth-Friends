@@ -8,21 +8,19 @@ import { FriendsList } from './components/FriendsList'
 function App() {
 
   return (
-    <div className="App">
+   
       <Router>
-
         <nav>
           <Link to='/login'> Login </Link>
+          <br/>
           <Link to='/friends'> Friends </Link>
         </nav>
         <Switch>
-          <Route path='/login' component={LoginForm}/>
+          <Route path='/login' component={LoginForm}/> //switch out with private route
           <Route path='/friends' component={FriendsList}/>
         </Switch>
-
       </Router>
-      
-    </div>
+
   );
 }
 

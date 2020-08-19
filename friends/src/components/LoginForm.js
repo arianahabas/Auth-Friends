@@ -1,22 +1,26 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 
 const initialValues = {
-    username: 'ariana',
-    password: 'habas'
+    username: 'Lambda School',
+    password: 'i<3Lambd4'
 }
+
 
 export const LoginForm = () => {
     const [values, setValues ] = useState (initialValues)
-    const [login, setLogin]  = useState('')
+   
 
     const handleChange = (e) => {
-        setValues({...login, [e.target.name]: e.target.value})
+        setValues({...values, [e.target.name]: e.target.value})
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-     
+        // axios.post('http://localhost:5000/api/login', initialValues)
+        // .then((res) => console.log(res))
+        // .catch((err) => console.log(err))
     }
 
     return (
@@ -36,6 +40,7 @@ export const LoginForm = () => {
                 name='password'
                 value={values.password}
                 />
+                <button>Login</button>
             </form>
         </div>
     )

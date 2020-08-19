@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { AddFriendForm } from './AddFriendForm'
-import axios from 'axios'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 
 
 
-export const FriendsList = () => {
+export const FriendsList = (props) => {
     const [friends, setFriends] = useState([])
 
     useEffect(()=>{
@@ -31,14 +30,14 @@ export const FriendsList = () => {
             <div>
                 <div className='level'>
                     <p className='level-item has-text-centered'>
-                         <h1 className='title is-1 is-centered' >Say 👋 to all of my 👩‍👩‍👦‍👦</h1>
+                         <h1 className='title is-1 is-centered mt-4' >Say 👋 to all of my 👩‍👩‍👦‍👦</h1>
                     </p>
                 </div>
                
-                <div class="columns">
+                <div class="columns is-multiline is-centered">
                 {friends.map(friend => 
-                    <div className='column has-background-primary mx-5 my-5 px-5 py-5 has-text-centered' key={friend.id}>
-                        <p className='title is-4'>{friend.name}</p>
+                    <div className='column is-one-quarter has-background-info mx-5 my-5 px-5 py-5 has-text-centered' key={friend.id}>
+                        <p className='title is-3'>{friend.name}</p>
                  
                         <p className='subtitle is-5 has-text-light'>{friend.email}</p>
                         <p className='subtitle is-5 has-text-light'>Age: {friend.age}</p>

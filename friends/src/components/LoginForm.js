@@ -30,15 +30,15 @@ export const LoginForm = () => {
     }
 
     return (
-    <section className='hero is-primary is-large'>
+    <section className='hero is-white'>
         <div className="hero-body">
             <div className="containter">
                 <div className="columns is-centered">
                     <div className="column is-one-quarter">
-                        <form action="" className='box' onSubmit={handleSubmit}>
+                        <form className='box' onSubmit={handleSubmit}>
                             <div className="field">
-                                <label for='' className='label'>Username</label>
-                                <div className="control has-icons-left">
+                                <label className='label'>Username</label>
+                                <div>
                                     <input
                                     type='username'
                                     placeholder='e.g. bobMarley'
@@ -48,14 +48,10 @@ export const LoginForm = () => {
                                     value={values.username}
                                     required
                                     />
-                                    <span className='icon is-small is-left'>
-                                    <i className='fa fa envelope'></i>
-                                    </span>
                                 </div>
                             </div>
                             <div className="field">
                                 <label for='' className='label'>Password</label>
-                                <div className="control has-icons-left">
                                     <input 
                                     type='password'
                                     placeholder='********'
@@ -64,15 +60,9 @@ export const LoginForm = () => {
                                     name='password'
                                     value={values.password}
                                     required
-                                    />
-                                    <span className='icon is-small is-left'>
-                                        <i className='fa fa lock'></i>
-                                    </span>    
-                                </div>
+                                    />  
                             </div>
-                            <div className="field">
-                                <button  type='submit' className='button is-success'>Login</button>
-                            </div>
+                                <button type='submit' className='button is-success'>Login</button>
                         </form>
                     </div>
                 </div>
@@ -82,30 +72,3 @@ export const LoginForm = () => {
     )
 }
 
-{/* <div className="field">
-       
-<form onSubmit={handleSubmit}>
-<div className="control">
-    <input 
-    type='username'
-    placeholder='username'
-    onChange={handleChange}
-    name='username'
-    value={values.username}
-    />
-    </div>
-    <div className="control">
-    <input 
-    type='text'
-    placeholder='password'
-    onChange={handleChange}
-    name='password'
-    value={values.password}
-    />
-    </div>
-<div class="control">
-    <button class="button is-primary">Login</button>
-</div>
-
-</form>
-</div>       */}

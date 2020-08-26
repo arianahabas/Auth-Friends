@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
+import { FriendsList } from './FriendsList'
 
 const initialValues = {
     name: '',
@@ -87,3 +88,39 @@ export const AddFriendForm = () => {
     </section>
     )
 }
+
+
+//TEST SH Example
+
+// import React from 'react'
+// import { render, screen, waitForDomChange } from '@testing-library/react'
+// import { FriendsList } from './FriendsList'
+// // import { axiosWithAuth as mockAxios } from './llAxiosWithAuth'
+// import {fetchApi as mockFetch } from './fetchApi' // change useEffect in freindsLIst (switch axioswithauth with fetchApi)
+
+
+// jest.mock('./fetchApi')
+
+// const testData = {
+//     data: [
+//         {
+//             id: 1,
+//             name: 'ben',
+//             age: '22',
+//             email: '22',
+//         }
+//         {
+
+//         }
+//     ]
+// }
+
+// test{'fetches data and renders freinds',  async () => {
+//     mockFetch.mockResolvedValueOnce(testData)
+//     const {debug, getByText } = render (<FriendsList/>)
+//     await waitForDomChange(() => {
+//         expect(getByText(/kdkdkdkddk/i)).toBeInTheDocument()
+//     })
+//     debug()
+
+// }}

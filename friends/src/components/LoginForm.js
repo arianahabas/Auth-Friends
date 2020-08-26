@@ -7,21 +7,19 @@ const initialValues = {
     username: 'Lambda School',
     password: 'i<3Lambd4'
 }
-
  
 export const LoginForm = () => {
     const [values, setValues ] = useState (initialValues)
+    const history = useHistory()
 
     const handleChange = (e) => {
         setValues({...values, [e.target.name]: e.target.value})
     }
 
-    const history = useHistory()
-
     const handleSubmit = (e) => {
         e.preventDefault()
         axiosWithAuth()
-        .post('/login', values)
+        .post('/login', values) //the (route, the data you want to send in)
         .then((res) => {
            localStorage.setItem('token', res.data.payload) 
            history.push('./friends')
